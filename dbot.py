@@ -1,6 +1,8 @@
 import discord
+import os
 from discord.ext import commands, tasks
 from itertools import cycle
+
 
 # prefix
 client = commands.Bot(command_prefix='.') 
@@ -30,4 +32,4 @@ async def on_message(message):
         await message.channel.send('{}'.format(message.author.mention) + ", True!" )
 
 # bot token
-client.run("ODM1MTYwNDIxMTc4NTQwMTEy.YILZwA.Fk7DB2TVkKbKF0fcQBUxvAd5yjs")
+client.run(os.environ['DISCORD_TOKEN'])
